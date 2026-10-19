@@ -2,42 +2,70 @@
   "id": "TokenTracker",
   "meta": {
     "name": "Token 用量 (TokenTracker)",
+    "name_en": "Token Usage (TokenTracker)",
     "version": "1.0.0",
     "author": "Codex",
     "description": "读取 TokenTracker 本地服务，在任务栏/面板显示 AI 编程工具的 Token 用量与花费。显示类别可在插件设置里按目标选择：今日、今日总量(含缓存)、近7天、近30天、累计、近7天花费、累计花费。需要 TokenTracker 桌面端处于运行状态。",
+    "description_en": "Reads the local TokenTracker service and shows token usage and cost of AI coding tools in the taskbar or panel. The display category can be selected per target in the plugin settings: today, today total (incl. cache), last 7 days, last 30 days, total, 7-day cost, total cost. The TokenTracker desktop app must be running.",
     "url": "https://www.tokentracker.cc"
   },
   "inputs": [
     {
       "key": "base_url",
       "label": "TokenTracker 本地地址",
+      "label_en": "TokenTracker local address",
       "type": "text",
       "default": "http://127.0.0.1:17680",
       "placeholder": "http://127.0.0.1:17680",
+      "placeholder_en": "http://127.0.0.1:17680",
       "scope": "global"
     },
     {
       "key": "tz",
       "label": "统计时区",
+      "label_en": "Statistics time zone",
       "type": "text",
       "default": "Asia/Shanghai",
       "placeholder": "Asia/Shanghai",
+      "placeholder_en": "Asia/Shanghai",
       "scope": "global"
     },
     {
       "key": "display_mode",
       "label": "显示类别",
+      "label_en": "Display category",
       "type": "select",
       "default": "today",
       "scope": "target",
       "options": [
-        { "label": "今日用量 (计费 Token)", "value": "today" },
-        { "label": "今日总量 (含缓存)", "value": "today_all" },
-        { "label": "近 7 天用量", "value": "week" },
-        { "label": "近 30 天用量", "value": "month" },
-        { "label": "累计用量", "value": "total" },
-        { "label": "近 7 天花费", "value": "week_cost" },
-        { "label": "累计花费", "value": "total_cost" }
+        {
+          "label": "今日用量 (计费 Token)",
+          "value": "today"
+        },
+        {
+          "label": "今日总量 (含缓存)",
+          "value": "today_all"
+        },
+        {
+          "label": "近 7 天用量",
+          "value": "week"
+        },
+        {
+          "label": "近 30 天用量",
+          "value": "month"
+        },
+        {
+          "label": "累计用量",
+          "value": "total"
+        },
+        {
+          "label": "近 7 天花费",
+          "value": "week_cost"
+        },
+        {
+          "label": "累计花费",
+          "value": "total_cost"
+        }
       ]
     }
   ],
@@ -381,7 +409,9 @@
     {
       "key": "today",
       "label": "今日 Token",
+      "label_en": "Today's Tokens",
       "short_label": "今日",
+      "short_label_en": "Day",
       "format_val": "{{today_tokens_fmt}}",
       "color": "{{today_color}}",
       "unit": ""
@@ -389,7 +419,9 @@
     {
       "key": "week",
       "label": "近 7 天 Token",
+      "label_en": "Last 7 Days Tokens",
       "short_label": "7D",
+      "short_label_en": "7D",
       "format_val": "{{week_tokens_fmt}}",
       "color": "{{week_color}}",
       "unit": ""
@@ -397,7 +429,9 @@
     {
       "key": "month",
       "label": "近 30 天 Token",
+      "label_en": "Last 30 Days Tokens",
       "short_label": "30D",
+      "short_label_en": "30D",
       "format_val": "{{month_tokens_fmt}}",
       "color": "{{month_color}}",
       "unit": ""
@@ -405,7 +439,9 @@
     {
       "key": "cost",
       "label": "近 7 天花费",
+      "label_en": "Last 7 Days Cost",
       "short_label": "花费",
+      "short_label_en": "Cost",
       "format_val": "${{cost_7d_fmt}}",
       "color": "{{cost_color}}",
       "unit": ""

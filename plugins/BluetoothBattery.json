@@ -2,25 +2,31 @@
   "id": "bluetooth_battery",
   "meta": {
     "name": "蓝牙设备电量",
+    "name_en": "Bluetooth Device Battery",
     "version": "1.4.1",
     "author": "WorkBuddy",
-    "description": "自动只显示当前连接中的蓝牙设备，按电量从低到高排列（最多 6 台），电量低于阈值红色。设备行可在 设置→监控项 中开关。需运行 BluetoothBattery.ps1 本地服务。"
+    "description": "自动只显示当前连接中的蓝牙设备，按电量从低到高排列（最多 6 台），电量低于阈值红色。设备行可在 设置→监控项 中开关。需运行 BluetoothBattery.ps1 本地服务。",
+    "description_en": "Shows only the currently connected Bluetooth devices, sorted by battery level (up to 6). Devices below the threshold turn red. Each row can be toggled in Settings -> Monitor Items. Requires the local BluetoothBattery.ps1 service."
   },
   "inputs": [
     {
       "key": "warn",
       "label": "爆红阈值(%)",
+      "label_en": "Low battery threshold (%)",
       "type": "text",
       "default": "20",
       "placeholder": "低于此值变红, 默认 20",
+      "placeholder_en": "Turns red below this value, default 20",
       "scope": "global"
     },
     {
       "key": "port",
       "label": "本地服务端口",
+      "label_en": "Local service port",
       "type": "text",
       "default": "18923",
       "placeholder": "需与 BluetoothBattery.ps1 -Port 一致",
+      "placeholder_en": "Must match BluetoothBattery.ps1 -Port",
       "scope": "global"
     }
   ],
@@ -109,6 +115,7 @@
     {
       "key": "cnt",
       "label": "蓝牙设备",
+      "label_en": "Bluetooth Devices",
       "short_label": "BTN",
       "format_val": "{{ok_count}}",
       "unit": "台",

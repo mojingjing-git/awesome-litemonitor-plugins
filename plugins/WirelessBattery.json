@@ -2,9 +2,11 @@
   "id": "WirelessBattery",
   "meta": {
     "name": "无线外设双电量 (鼠标/耳机)",
+    "name_en": "Wireless Peripherals Battery (Mouse/Headset)",
     "version": "1.0",
     "author": "Antigravity",
-    "description": "实时监控英菲克无线鼠标与漫步者花再耳机电量，支持上下分行与 Emoji 图标显示"
+    "description": "实时监控英菲克无线鼠标与漫步者花再耳机电量，支持上下分行与 Emoji 图标显示",
+    "description_en": "Monitor the battery level of the INFIK wireless mouse and the EDIFIER flower headset in real time, with optional split-line layout and emoji icons"
   },
   "inputs": [],
   "execution": {
@@ -46,6 +48,7 @@
     {
       "key": "combined",
       "label": "外设",
+      "label_en": "Peripherals",
       "short_label": "B",
       "format_val": "🖱️{{m_lvl}}% 🎧{{h_lvl}}%",
       "unit": "",

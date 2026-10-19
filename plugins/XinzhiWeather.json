@@ -2,17 +2,21 @@
   "id": "XinzhiWeather",
   "meta": {
     "name": "心知天气",
+    "name_en": "Xinzhi Weather",
     "version": "1.0",
     "author": "DT9025A",
-    "description": "心知天气基础API，基于IP自动定位，获取天气数据，支持多种显示方式"
+    "description": "心知天气基础API，基于IP自动定位，获取天气数据，支持多种显示方式",
+    "description_en": "Basic Xinzhi Weather API, locates automatically by IP, fetches weather data and supports several display styles"
   },
   "inputs": [
     {
       "key": "city",
       "label": "城市名称",
+      "label_en": "City name",
       "type": "text",
       "default": "",
       "placeholder": "留空则自动定位",
+      "placeholder_en": "Leave blank to locate automatically",
       "scope": "target"
     },
     {
@@ -26,17 +30,39 @@
     {
       "key": "style",
       "label": "显示内容",
+      "label_en": "Display content",
       "type": "select",
       "default": "standard",
       "scope": "target",
       "options": [
-        { "label": "标准 (☀️ 晴 25℃)", "value": "standard" },
-        { "label": "仅温度 (25℃)", "value": "temp_only" },
-        { "label": "Emoji+温度 (☀️ 25℃)", "value": "emoji_temp" },
-        { "label": "仅Emoji (☀️)", "value": "emoji_only" },
-        { "label": "仅文字 (晴 25℃)", "value": "text_temp" },
-        { "label": "温差 (20~30℃)", "value": "range" },
-        { "label": "Emoji+温差 (☀️ 20~30℃)", "value": "emoji_range" }
+        {
+          "label": "标准 (☀️ 晴 25℃)",
+          "value": "standard"
+        },
+        {
+          "label": "仅温度 (25℃)",
+          "value": "temp_only"
+        },
+        {
+          "label": "Emoji+温度 (☀️ 25℃)",
+          "value": "emoji_temp"
+        },
+        {
+          "label": "仅Emoji (☀️)",
+          "value": "emoji_only"
+        },
+        {
+          "label": "仅文字 (晴 25℃)",
+          "value": "text_temp"
+        },
+        {
+          "label": "温差 (20~30℃)",
+          "value": "range"
+        },
+        {
+          "label": "Emoji+温差 (☀️ 20~30℃)",
+          "value": "emoji_range"
+        }
       ]
     }
   ],
@@ -188,6 +214,7 @@
     {
       "key": "temp",
       "label": "{{city_display ?? city ?? auto_city}}天气",
+      "label_en": "{{city_display ?? city ?? auto_city}}",
       "short_label": " ",
       "format_val": "{{final_display}}",
       "color": "{{color_state}}",

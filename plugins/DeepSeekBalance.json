@@ -2,9 +2,11 @@
   "id": "deepseek_balance",
   "meta": {
     "name": "DeepSeek 餘額 (CNY/USD)",
+    "name_en": "DeepSeek Balance (CNY/USD)",
     "version": "1.0",
     "author": "shamough1792",
-    "description": "監控 DeepSeek API 帳戶實時餘額 (同時顯示人民幣與美金)"
+    "description": "監控 DeepSeek API 帳戶實時餘額 (同時顯示人民幣與美金)",
+    "description_en": "Monitor the real-time balance of a DeepSeek API account (shows both CNY and USD)"
   },
   "inputs": [
     {
@@ -57,16 +59,16 @@
               "999999": "0"
             }
           },
-	{
-	  "var": "color_usd",
-	  "source": "usd_bal",
-	  "function": "threshold_switch",
-	  "value_map": {
-		"1": "2",
-		"5": "1",
-		"999999": "0"
-	  }
-	}
+          {
+            "var": "color_usd",
+            "source": "usd_bal",
+            "function": "threshold_switch",
+            "value_map": {
+              "1": "2",
+              "5": "1",
+              "999999": "0"
+            }
+          }
         ]
       }
     ]

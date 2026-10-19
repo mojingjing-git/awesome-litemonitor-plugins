@@ -2,9 +2,11 @@
   "id": "fan_speed",
   "meta": {
     "name": "风扇转速",
+    "name_en": "Fan Speed",
     "version": "1.0",
     "author": "LiteMonitor",
-    "description": "直接读 EC，实时显示 CPU/GPU 风扇转速 — 机械革命蛟龙16 Pro"
+    "description": "直接读 EC，实时显示 CPU/GPU 风扇转速 — 机械革命蛟龙16 Pro",
+    "description_en": "Read EC directly to show real-time CPU/GPU fan speed — JIULONG 16 Pro"
   },
   "inputs": [],
   "execution": {
@@ -28,6 +30,7 @@
     {
       "key": "cpu",
       "label": "CPU风扇",
+      "label_en": "CPU Fan",
       "short_label": "CPU",
       "format_val": "{{cpu_fan}}",
       "unit": "RPM",
@@ -36,6 +39,7 @@
     {
       "key": "gpu",
       "label": "GPU风扇",
+      "label_en": "GPU Fan",
       "short_label": "GPU",
       "format_val": "{{gpu_fan}}",
       "unit": "RPM",

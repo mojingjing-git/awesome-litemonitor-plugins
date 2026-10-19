@@ -2,9 +2,11 @@
   "id": "minimax_plan",
   "meta": {
     "name": "MiniMax 余量",
+    "name_en": "MiniMax Quota",
     "version": "1.0",
     "author": "User",
-    "description": "查询 MiniMax Token Plan 5小时/周窗口剩余配额"
+    "description": "查询 MiniMax Token Plan 5小时/周窗口剩余配额",
+    "description_en": "Query the remaining quota of the MiniMax Token Plan 5-hour and weekly windows"
   },
   "inputs": [
     {
@@ -379,6 +381,7 @@
     {
       "key": "weekly",
       "label": "MiniMax 周",
+      "label_en": "MiniMax Week",
       "short_label": "MW",
       "format_val": "{{weekly_pct}}%",
       "unit": ""
@@ -386,6 +389,7 @@
     {
       "key": "reset",
       "label": "5h重置",
+      "label_en": "5h Reset",
       "short_label": "R",
       "format_val": "{{reset_label}}",
       "color": "{{reset_color}}",
