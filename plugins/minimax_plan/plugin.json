@@ -4,7 +4,7 @@
     "name": "MiniMax 余量",
     "name_en": "MiniMax Quota",
     "version": "1.0",
-    "author": "User",
+    "author": "mojingjing-git",
     "description": "查询 MiniMax Token Plan 5小时/周窗口剩余配额",
     "description_en": "Query the remaining quota of the MiniMax Token Plan 5-hour and weekly windows"
   },
@@ -15,7 +15,8 @@
       "type": "text",
       "default": "",
       "placeholder": "sk-cp-...",
-      "scope": "global"
+      "scope": "global",
+      "label_en": "API Key"
     }
   ],
   "execution": {
@@ -376,7 +377,9 @@
       "short_label": "M5",
       "format_val": "{{interval_pct}}%",
       "color": "{{color_state}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": "M5",
+      "label_en": "MiniMax 5h"
     },
     {
       "key": "weekly",
@@ -384,7 +387,8 @@
       "label_en": "MiniMax Week",
       "short_label": "MW",
       "format_val": "{{weekly_pct}}%",
-      "unit": ""
+      "unit": "",
+      "short_label_en": "MW"
     },
     {
       "key": "reset",
@@ -393,7 +397,8 @@
       "short_label": "R",
       "format_val": "{{reset_label}}",
       "color": "{{reset_color}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": "R"
     }
   ]
 }

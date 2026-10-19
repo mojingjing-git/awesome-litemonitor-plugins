@@ -1,0 +1,14 @@
+# 本地产物：gen_index.py --report 生成，不入库
+validation-report.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -35,7 +35,9 @@
       "short_label": "M",
       "format_val": "{{m_lvl}}",
       "unit": "%",
-      "color": "{{m_col}}"
+      "color": "{{m_col}}",
+      "short_label_en": "M",
+      "label_en": "🖱️"
     },
     {
       "key": "headset",
@@ -43,7 +45,9 @@
       "short_label": "H",
       "format_val": "{{h_lvl}}",
       "unit": "%",
-      "color": "{{h_col}}"
+      "color": "{{h_col}}",
+      "short_label_en": "H",
+      "label_en": "🎧"
     },
     {
       "key": "combined",
@@ -52,7 +56,8 @@
       "short_label": "B",
       "format_val": "🖱️{{m_lvl}}% 🎧{{h_lvl}}%",
       "unit": "",
-      "color": "{{m_col}}"
+      "color": "{{m_col}}",
+      "short_label_en": "B"
     }
   ]
 }

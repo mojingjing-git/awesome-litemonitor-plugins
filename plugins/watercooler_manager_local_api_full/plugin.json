@@ -4,7 +4,7 @@
     "name": "水冷管理器本地API增强版",
     "name_en": "Water Cooler Manager Local API Enhanced",
     "version": "1.3",
-    "author": "OpenAI",
+    "author": "mojingjing-git",
     "description": "读取 watercooler-manager 导出的设备、模式、风扇、水泵、RGB、CPU/GPU温度和运行时间，支持自定义 API 主机和端口。",
     "description_en": "Reads device, mode, fan, pump, RGB, CPU/GPU temperature and uptime exported by watercooler-manager. Custom API host and port are supported."
   },

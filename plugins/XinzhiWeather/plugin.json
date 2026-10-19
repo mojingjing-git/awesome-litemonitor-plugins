@@ -25,7 +25,8 @@
       "type": "text",
       "default": "",
       "placeholder": "填写自己申请的心知天气API私钥",
-      "scope": "target"
+      "scope": "target",
+      "label_en": "API Key"
     },
     {
       "key": "style",
@@ -218,7 +219,8 @@
       "short_label": " ",
       "format_val": "{{final_display}}",
       "color": "{{color_state}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     }
   ]
 }

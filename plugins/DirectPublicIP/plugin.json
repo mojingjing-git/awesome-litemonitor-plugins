@@ -4,7 +4,7 @@
     "name": "直连公网IP显示",
     "name_en": "Direct Public IP",
     "version": "1.0",
-    "author": "",
+    "author": "mojingjing-git",
     "description": "直连公网IP插件，获取当前网络的直连公网IPv4地址",
     "description_en": "Direct public IP plugin, gets the direct public IPv4 address of the current network"
   },
@@ -65,7 +65,8 @@
       "label_en": "Direct IP",
       "short_label": " ",
       "format_val": "{{direct_ip}} [{{isp_name}}]",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "direct_addr",
@@ -73,7 +74,8 @@
       "label_en": "Direct 📍",
       "short_label": " ",
       "format_val": "{{direct_addr_pro}}, {{direct_addr_city}}, {{direct_addr_region}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "direct_latency",
@@ -82,7 +84,8 @@
       "short_label": " ",
       "format_val": "{{direct_latency}} ms",
       "unit": "",
-      "color": "{{direct_latency_color}}"
+      "color": "{{direct_latency_color}}",
+      "short_label_en": " "
     }
   ]
 }

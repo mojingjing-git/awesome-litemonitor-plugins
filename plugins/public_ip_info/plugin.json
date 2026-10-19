@@ -108,7 +108,8 @@
       "label_en": "Direct IP",
       "short_label": " ",
       "format_val": "{{direct_ip}} [{{isp_name}}]",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "direct_addr",
@@ -116,7 +117,8 @@
       "label_en": "Direct 📍",
       "short_label": " ",
       "format_val": "{{direct_addr_pro}}, {{direct_addr_city}}, {{direct_addr_region}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "direct_latency",
@@ -125,7 +127,8 @@
       "short_label": " ",
       "format_val": "{{direct_latency}} ms",
       "unit": "",
-      "color": "{{direct_latency_color}}"
+      "color": "{{direct_latency_color}}",
+      "short_label_en": " "
     },
     {
       "key": "proxy_ip",
@@ -133,7 +136,8 @@
       "label_en": "Proxy IP",
       "short_label": " ",
       "format_val": "{{proxy_ip}} [{{proxy_ip_desc}}]",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "proxy_addr",
@@ -141,7 +145,8 @@
       "label_en": "Proxy 📍",
       "short_label": " ",
       "format_val": "{{proxy_ip_country}}, {{proxy_ip_state}}, {{proxy_ip_city}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "proxy_latency",
@@ -150,7 +155,8 @@
       "short_label": " ",
       "format_val": "{{proxy_latency}} ms",
       "unit": "",
-      "color": "{{proxy_latency_color}}"
+      "color": "{{proxy_latency_color}}",
+      "short_label_en": " "
     }
   ]
 }

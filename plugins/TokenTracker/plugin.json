@@ -4,7 +4,7 @@
     "name": "Token 用量 (TokenTracker)",
     "name_en": "Token Usage (TokenTracker)",
     "version": "1.0.0",
-    "author": "Codex",
+    "author": "mojingjing-git",
     "description": "读取 TokenTracker 本地服务，在任务栏/面板显示 AI 编程工具的 Token 用量与花费。显示类别可在插件设置里按目标选择：今日、今日总量(含缓存)、近7天、近30天、累计、近7天花费、累计花费。需要 TokenTracker 桌面端处于运行状态。",
     "description_en": "Reads the local TokenTracker service and shows token usage and cost of AI coding tools in the taskbar or panel. The display category can be selected per target in the plugin settings: today, today total (incl. cache), last 7 days, last 30 days, total, 7-day cost, total cost. The TokenTracker desktop app must be running.",
     "url": "https://www.tokentracker.cc"
@@ -344,6 +344,20 @@
         }
       },
       {
+        "var": "mode_label_en",
+        "source": "display_mode",
+        "function": "map",
+        "map": {
+          "today": "Today",
+          "today_all": "Today (Total)",
+          "week": "Last 7 Days",
+          "month": "Last 30 Days",
+          "total": "Total",
+          "week_cost": "Last 7 Days Cost",
+          "total_cost": "Total Cost"
+        }
+      },
+      {
         "var": "mode_short",
         "source": "display_mode",
         "function": "map",
@@ -355,6 +369,20 @@
           "total": "累计",
           "week_cost": "7D$",
           "total_cost": "累计$"
+        }
+      },
+      {
+        "var": "mode_short_en",
+        "source": "display_mode",
+        "function": "map",
+        "map": {
+          "today": "Day",
+          "today_all": "Day+",
+          "week": "7D",
+          "month": "30D",
+          "total": "Total",
+          "week_cost": "7D$",
+          "total_cost": "Total$"
         }
       },
       {
@@ -404,7 +432,9 @@
       "short_label": "{{mode_short ?? 'TK'}}",
       "format_val": "{{mode_value}}",
       "color": "{{mode_color}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": "{{mode_short_en ?? 'TK'}}",
+      "label_en": "{{mode_label_en ?? 'Token'}}"
     },
     {
       "key": "today",

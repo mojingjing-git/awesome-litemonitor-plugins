@@ -70,7 +70,9 @@
       "short_label": "BT1",
       "format_val": "{{dev1_text}}",
       "unit": "",
-      "color": "{{dev1_color}}"
+      "color": "{{dev1_color}}",
+      "short_label_en": "BT1",
+      "label_en": "{{dev1_name}}"
     },
     {
       "key": "dev2",
@@ -78,7 +80,9 @@
       "short_label": "BT2",
       "format_val": "{{dev2_text}}",
       "unit": "",
-      "color": "{{dev2_color}}"
+      "color": "{{dev2_color}}",
+      "short_label_en": "BT2",
+      "label_en": "{{dev2_name}}"
     },
     {
       "key": "dev3",
@@ -86,7 +90,9 @@
       "short_label": "BT3",
       "format_val": "{{dev3_text}}",
       "unit": "",
-      "color": "{{dev3_color}}"
+      "color": "{{dev3_color}}",
+      "short_label_en": "BT3",
+      "label_en": "{{dev3_name}}"
     },
     {
       "key": "dev4",
@@ -94,7 +100,9 @@
       "short_label": "BT4",
       "format_val": "{{dev4_text}}",
       "unit": "",
-      "color": "{{dev4_color}}"
+      "color": "{{dev4_color}}",
+      "short_label_en": "BT4",
+      "label_en": "{{dev4_name}}"
     },
     {
       "key": "dev5",
@@ -102,7 +110,9 @@
       "short_label": "BT5",
       "format_val": "{{dev5_text}}",
       "unit": "",
-      "color": "{{dev5_color}}"
+      "color": "{{dev5_color}}",
+      "short_label_en": "BT5",
+      "label_en": "{{dev5_name}}"
     },
     {
       "key": "dev6",
@@ -110,7 +120,9 @@
       "short_label": "BT6",
       "format_val": "{{dev6_text}}",
       "unit": "",
-      "color": "{{dev6_color}}"
+      "color": "{{dev6_color}}",
+      "short_label_en": "BT6",
+      "label_en": "{{dev6_name}}"
     },
     {
       "key": "cnt",
@@ -119,7 +131,8 @@
       "short_label": "BTN",
       "format_val": "{{ok_count}}",
       "unit": "台",
-      "color": "0"
+      "color": "0",
+      "short_label_en": "BTN"
     }
   ]
 }

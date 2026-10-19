@@ -34,7 +34,8 @@
       "short_label": "CPU",
       "format_val": "{{cpu_fan}}",
       "unit": "RPM",
-      "color": "{{cpu_color ?? '0'}}"
+      "color": "{{cpu_color ?? '0'}}",
+      "short_label_en": "CPU"
     },
     {
       "key": "gpu",
@@ -43,7 +44,8 @@
       "short_label": "GPU",
       "format_val": "{{gpu_fan}}",
       "unit": "RPM",
-      "color": "{{gpu_color ?? '0'}}"
+      "color": "{{gpu_color ?? '0'}}",
+      "short_label_en": "GPU"
     }
   ]
 }

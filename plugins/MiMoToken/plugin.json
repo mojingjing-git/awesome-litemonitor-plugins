@@ -16,7 +16,8 @@
       "default": "",
       "placeholder": "留空则自动从浏览器获取",
       "placeholder_en": "Leave blank to fetch from the browser automatically",
-      "scope": "global"
+      "scope": "global",
+      "label_en": "Cookie"
     }
   ],
   "execution": {

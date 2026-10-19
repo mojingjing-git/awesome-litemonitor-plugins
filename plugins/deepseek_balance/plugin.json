@@ -15,7 +15,8 @@
       "type": "text",
       "default": "",
       "placeholder": "sk-...",
-      "scope": "global"
+      "scope": "global",
+      "label_en": "DeepSeek API Key"
     }
   ],
   "execution": {
@@ -80,7 +81,9 @@
       "short_label": "DS-CNY",
       "format_val": "¥{{cny_bal ?? '0.00'}}",
       "unit": "",
-      "color": "{{color_cny}}"
+      "color": "{{color_cny}}",
+      "short_label_en": "DS-CNY",
+      "label_en": "DeepSeek (CNY)"
     },
     {
       "key": "bal_usd",
@@ -88,7 +91,9 @@
       "short_label": "DS-USD",
       "format_val": "${{usd_bal ?? '0.00'}}",
       "unit": "",
-      "color": "{{color_usd}}"
+      "color": "{{color_usd}}",
+      "short_label_en": "DS-USD",
+      "label_en": "DeepSeek (USD)"
     }
   ]
 }

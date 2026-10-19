@@ -4,7 +4,7 @@
     "name": "代理公网IP显示",
     "name_en": "Proxy Public IP",
     "version": "1.0",
-    "author": "",
+    "author": "mojingjing-git",
     "description": "代理公网IP插件，获取当前网络的代理公网IPv4地址",
     "description_en": "Proxy public IP plugin, gets the proxied public IPv4 address of the current network"
   },
@@ -65,7 +65,8 @@
       "label_en": "Proxy IP",
       "short_label": " ",
       "format_val": "{{proxy_ip}} [{{proxy_ip_desc}}]",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "proxy_addr",
@@ -73,7 +74,8 @@
       "label_en": "Proxy 📍",
       "short_label": " ",
       "format_val": "{{proxy_ip_country}}, {{proxy_ip_state}}, {{proxy_ip_city}}",
-      "unit": ""
+      "unit": "",
+      "short_label_en": " "
     },
     {
       "key": "proxy_latency",
@@ -82,7 +84,8 @@
       "short_label": " ",
       "format_val": "{{proxy_latency}} ms",
       "unit": "",
-      "color": "{{proxy_latency_color}}"
+      "color": "{{proxy_latency_color}}",
+      "short_label_en": " "
     }
   ]
 }
