@@ -1,0 +1,83 @@
+{
+    "id": "proxy_public_ip",
+    "meta": {
+        "name": "代理公网IP显示",
+        "version": "1.0",
+        "author": "",
+        "description": "代理公网IP插件，获取当前网络的代理公网IPv4地址"
+    },
+    "inputs": [],
+    "execution": {
+        "type": "chain",
+        "interval": 600,
+        "steps": [
+            {
+                "id": "get_proxy_ip",
+                "url": "https://api.ipapi.is/",
+                "response_encoding": "gbk",
+                "extract": {
+                    "proxy_ip": "ip",
+                    "proxy_ip_desc_raw": "company.name",
+                    "proxy_ip_country": "location.country",
+                    "proxy_ip_state": "location.state",
+                    "proxy_ip_city": "location.city"
+                },
+                "process": [
+                    {
+                        "var": "proxy_ip_desc",
+                        "source": "proxy_ip_desc_raw",
+                        "function": "regex_replace",
+                        "pattern": "([^,]+).*",
+                        "to": "$1"
+                    }
+                ]
+            },
+            {
+                "id": "get_proxy_latency",
+                "url": "https://www.google.com/generate_204?dummy={{__latency__}}",
+                "cache_minutes": 0,
+                "process": [
+                    {
+                        "var": "proxy_latency",
+                        "source": "__latency__",
+                        "function": "resolve_template"
+                    },
+                    {
+                        "var": "proxy_latency_color",
+                        "source": "__latency__",
+                        "function": "threshold_switch",
+                        "value_map": {
+                            "0": "0",
+                            "200": "1",
+                            "500": "2"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "outputs": [
+        {
+            "key": "proxy_ip",
+            "label": "代理IP",
+            "short_label": " ",
+            "format_val": "{{proxy_ip}} [{{proxy_ip_desc}}]",
+            "unit": ""
+        },
+        {
+            "key": "proxy_addr",
+            "label": "代理🌏",
+            "short_label": " ",
+            "format_val": "{{proxy_ip_country}}, {{proxy_ip_state}}, {{proxy_ip_city}}",
+            "unit": ""
+        },
+        {
+            "key": "proxy_latency",
+            "label": "代理⏳",
+            "short_label": " ",
+            "format_val": "{{proxy_latency}} ms",
+            "unit": "",
+            "color": "{{proxy_latency_color}}"
+        }
+    ]
+}

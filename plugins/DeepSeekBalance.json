@@ -1,0 +1,92 @@
+{
+  "id": "deepseek_balance",
+  "meta": {
+    "name": "DeepSeek 餘額 (CNY/USD)",
+    "version": "1.0",
+    "author": "shamough1792",
+    "description": "監控 DeepSeek API 帳戶實時餘額 (同時顯示人民幣與美金)"
+  },
+  "inputs": [
+    {
+      "key": "api_key",
+      "label": "DeepSeek API Key",
+      "type": "text",
+      "default": "",
+      "placeholder": "sk-...",
+      "scope": "global"
+    }
+  ],
+  "execution": {
+    "type": "chain",
+    "interval": 60,
+    "steps": [
+      {
+        "id": "get_balance",
+        "url": "https://api.deepseek.com/user/balance",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Bearer {{api_key}}",
+          "Accept": "application/json"
+        },
+        "response_format": "json",
+        "extract": {
+          "raw_json": "balance_infos"
+        },
+        "process": [
+          {
+            "var": "cny_bal",
+            "source": "raw_json",
+            "function": "regex_replace",
+            "pattern": ".*\"currency\"\\s*:\\s*\"CNY\"[^\\]]*?\"total_balance\"\\s*:\\s*\"([0-9]+(\\.[0-9]{1,2})?)[^\"]*\".*",
+            "to": "$1"
+          },
+          {
+            "var": "usd_bal",
+            "source": "raw_json",
+            "function": "regex_replace",
+            "pattern": ".*\"currency\"\\s*:\\s*\"USD\"[^\\]]*?\"total_balance\"\\s*:\\s*\"([0-9]+(\\.[0-9]{1,2})?)[^\"]*\".*",
+            "to": "$1"
+          },
+          {
+            "var": "color_cny",
+            "source": "cny_bal",
+            "function": "threshold_switch",
+            "value_map": {
+              "5": "2",
+              "20": "1",
+              "999999": "0"
+            }
+          },
+	{
+	  "var": "color_usd",
+	  "source": "usd_bal",
+	  "function": "threshold_switch",
+	  "value_map": {
+		"1": "2",
+		"5": "1",
+		"999999": "0"
+	  }
+	}
+        ]
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "key": "bal_cny",
+      "label": "DeepSeek (CNY)",
+      "short_label": "DS-CNY",
+      "format_val": "¥{{cny_bal ?? '0.00'}}",
+      "unit": "",
+      "color": "{{color_cny}}"
+    },
+    {
+      "key": "bal_usd",
+      "label": "DeepSeek (USD)",
+      "short_label": "DS-USD",
+      "format_val": "${{usd_bal ?? '0.00'}}",
+      "unit": "",
+      "color": "{{color_usd}}"
+    }
+  ]
+}

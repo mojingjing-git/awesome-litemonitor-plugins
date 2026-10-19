@@ -1,0 +1,105 @@
+{
+  "id": "watercooler_manager_local_api_full",
+  "meta": {
+    "name": "水冷管理器本地API增强版",
+    "version": "1.3",
+    "author": "OpenAI",
+    "description": "读取 watercooler-manager 导出的设备、模式、风扇、水泵、RGB、CPU/GPU温度和运行时间，支持自定义 API 主机和端口。"
+  },
+  "inputs": [
+    {
+      "key": "api_host",
+      "label": "API 主机",
+      "type": "text",
+      "default": "127.0.0.1",
+      "placeholder": "本机填 127.0.0.1，远程填电脑局域网 IP",
+      "scope": "global"
+    },
+    {
+      "key": "api_port",
+      "label": "API 端口",
+      "type": "text",
+      "default": "21977",
+      "placeholder": "例如 21977",
+      "scope": "global"
+    }
+  ],
+  "execution": {
+    "type": "chain",
+    "interval": 3,
+    "steps": [
+      {
+        "id": "status",
+        "url": "http://{{api_host}}:{{api_port}}/api/status",
+        "extract": {
+          "device_name": "device_name",
+          "mode_raw": "mode",
+          "fan_text": "fan.text",
+          "pump_text": "pump.text",
+          "rgb_text": "rgb.text",
+          "cpu_c": "temperature.cpu_c",
+          "gpu_c": "temperature.gpu_c",
+          "uptime_text": "uptime.text"
+        }
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "key": "device_name",
+      "label": "水冷设备",
+      "short_label": "设备",
+      "format_val": "{{device_name}}",
+      "unit": ""
+    },
+    {
+      "key": "mode_raw",
+      "label": "水冷模式",
+      "short_label": "模式",
+      "format_val": "{{mode_raw}}",
+      "unit": ""
+    },
+    {
+      "key": "fan_text",
+      "label": "风扇功率",
+      "short_label": "扇",
+      "format_val": "{{fan_text}}",
+      "unit": ""
+    },
+    {
+      "key": "pump_text",
+      "label": "水泵功率",
+      "short_label": "泵",
+      "format_val": "{{pump_text}}",
+      "unit": ""
+    },
+    {
+      "key": "rgb_text",
+      "label": "RGB 灯效",
+      "short_label": "RGB",
+      "format_val": "{{rgb_text}}",
+      "unit": ""
+    },
+    {
+      "key": "cpu_c",
+      "label": "CPU 温度",
+      "short_label": "CPU",
+      "format_val": "{{cpu_c}}",
+      "unit": "°C"
+    },
+    {
+      "key": "gpu_c",
+      "label": "显卡温度",
+      "short_label": "GPU",
+      "format_val": "{{gpu_c}}",
+      "unit": "°C"
+    },
+    {
+      "key": "uptime_text",
+      "label": "已运行时间",
+      "short_label": "运行",
+      "format_val": "{{uptime_text}}",
+      "unit": ""
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+    "id": "DirectPublicIP",
+    "meta": {
+        "name": "直连公网IP显示",
+        "version": "1.0",
+        "author": "",
+        "description": "直连公网IP插件，获取当前网络的直连公网IPv4地址"
+    },
+    "inputs": [],
+    "execution": {
+        "type": "chain",
+        "interval": 600,
+        "steps": [
+            {
+                "id": "get_direct_ip",
+                "url": "https://whois.pconline.com.cn/ipJson.jsp?json=true",
+                "response_encoding": "gbk",
+                "extract": {
+                    "direct_ip": "ip",
+                    "direct_addr_raw": "addr",
+                    "direct_addr_pro": "pro",
+                    "direct_addr_city": "city",
+                    "direct_addr_region": "region"
+                },
+                "process": [
+                    {
+                        "var": "isp_name",
+                        "source": "direct_addr_raw",
+                        "function": "regex_replace",
+                        "pattern": ".*\\s([\\u4e00-\\u9fa5]+)[A-Za-z]*.*",
+                        "to": "$1"
+                    }
+                ]
+            },
+            {
+                "id": "get_direct_latency",
+                "url": "http://wifi.vivo.com.cn/generate_204",
+                "cache_minutes": 0,
+                "process": [
+                    {
+                        "var": "direct_latency",
+                        "source": "__latency__",
+                        "function": "resolve_template"
+                    },
+                    {
+                        "var": "direct_latency_color",
+                        "source": "__latency__",
+                        "function": "threshold_switch",
+                        "value_map": {
+                            "0": "0",
+                            "200": "1",
+                            "500": "2"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "outputs": [
+        {
+            "key": "direct_ip",
+            "label": "直连IP",
+            "short_label": " ",
+            "format_val": "{{direct_ip}} [{{isp_name}}]",
+            "unit": ""
+        },
+        {
+            "key": "direct_addr",
+            "label": "直连🌏",
+            "short_label": " ",
+            "format_val": "{{direct_addr_pro}}, {{direct_addr_city}}, {{direct_addr_region}}",
+            "unit": ""
+        },
+        {
+            "key": "direct_latency",
+            "label": "直连⏳",
+            "short_label": " ",
+            "format_val": "{{direct_latency}} ms",
+            "unit": "",
+            "color": "{{direct_latency_color}}"
+        }
+    ]
+}
